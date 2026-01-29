@@ -1,0 +1,14 @@
+{
+  "name": "sidebarzz",
+  "version": "0.1.0",
+  "description": "Chrome extension for workspace and bookmark management via side panel",
+  "author": "Shimmy",
+  "scripts": {
+    "build": "node build.js",
+    "build:watch": "node build.js --watch",
+    "package:store": "node create-store-package.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
+}
