@@ -30,17 +30,33 @@ const sidepanelOptions = {
   format: 'esm'
 };
 
-// Ensure dist exists and copy/write assets that have source outside dist
+// Static assets: same filename in src/ and dist/
+const STATIC_ASSETS = [
+  'index.css',
+  'popup.html',
+  'popup.js',
+  'options.html',
+  'options.js',
+  'options.css',
+  'newtab.html',
+  'newtab.js',
+  'sidebar.css',
+  'content.js'
+];
+
+// Ensure dist exists and copy all assets from src (single source of truth)
 function syncDistAssets() {
   if (!fs.existsSync(distDir)) {
     fs.mkdirSync(distDir, { recursive: true });
   }
-  // Copy side panel CSS (loaded by dist/sidepanel.html)
-  const indexCssSrc = path.join(rootDir, 'src/index.css');
-  if (fs.existsSync(indexCssSrc)) {
-    fs.copyFileSync(indexCssSrc, path.join(distDir, 'index.css'));
+  const srcDir = path.join(rootDir, 'src');
+  for (const name of STATIC_ASSETS) {
+    const srcPath = path.join(srcDir, name);
+    if (fs.existsSync(srcPath)) {
+      fs.copyFileSync(srcPath, path.join(distDir, name));
+    }
   }
-  // Emit sidepanel.html so paths stay correct (extension loads dist/sidepanel.html)
+  // Emit sidepanel.html (generated; paths for extension)
   const sidepanelHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Workspace Manager Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Workspace Manager Settings</h1>
+    
+    <section class="settings-section">
+      <h2>Sidebar Position</h2>
+      <div class="setting-item">
+        <label>
+          <input type="radio" name="position" value="left"> Left
+        </label>
+        <label>
+          <input type="radio" name="position" value="right"> Right
+        </label>
+      </div>
+    </section>
+
+    <section class="settings-section">
+      <h2>Workspaces</h2>
+      <div id="workspaces-list" class="list-container"></div>
+      <button id="add-workspace-btn" class="btn btn-primary">+ Add Workspace</button>
+    </section>
+
+    <section class="settings-section">
+      <h2>Bookmarks</h2>
+      <div id="bookmarks-list" class="list-container"></div>
+      <button id="add-bookmark-btn" class="btn btn-primary">+ Add Bookmark</button>
+    </section>
+
+    <div class="button-group">
+      <button id="save-btn" class="btn btn-success">Save Settings</button>
+      <button id="reset-btn" class="btn btn-secondary">Reset to Defaults</button>
+    </div>
+
+    <div id="status-message" class="status-message"></div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

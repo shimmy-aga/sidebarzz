@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Sidebarzz",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Manage workspaces, bookmarks, and tabs from a fixed side panel",
   "author": "Shimmy",
   "icons": {
