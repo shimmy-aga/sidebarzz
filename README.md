@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icons/logo.png" alt="Sidebarzz Logo" width="250" />
+  <img src="icons/logo.png" alt="Sidebarzz Logo" width="275" />
 </p>
 
 <h1 align="center">Sidebarzz</h1>
